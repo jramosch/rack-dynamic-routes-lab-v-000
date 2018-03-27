@@ -9,3 +9,5 @@ class application
       resp.write "Item Not Found"
       resp.status = 404
     end
+  end
+end
