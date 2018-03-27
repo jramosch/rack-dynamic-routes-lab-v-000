@@ -3,7 +3,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if resp.path=="/items"
+    if req.path.match(/items/)
       item = req.path.split("/items/").last
     else
       resp.write "Item Not Found"
