@@ -4,9 +4,9 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item = req.path.split("/items/").last
-      price = @@items.find{|i.price| i.name == item}
-      resp.write item.price
+      name = req.path.split("/items/").last
+      item = @@items.find{|i| i.name == name}
+      resp.write item.name
     else
       resp.write "Route not found"
       resp.status = 404
